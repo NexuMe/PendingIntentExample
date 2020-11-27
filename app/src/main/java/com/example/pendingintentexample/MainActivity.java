@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnStart, btnStop;
     int notificationId = 7878;
-    String CHANNEL_ID = "doctrina_locus_channel";
+    String CHANNEL_ID = "nbu_channel";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +49,13 @@ public class MainActivity extends AppCompatActivity {
     private void sendNotification() {
 
         // Create an explicit intent for an Activity in your app
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://doctrinalocus.eu"));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.nbu.bg"));
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(android.R.drawable.ic_dialog_alert)
-                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher))
+                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.clouds))
                 .setContentTitle("Notifications Title")
                 .setContentText("Your notification content here.")
                 .setSubText("Tap to view the website.")
