@@ -56,9 +56,13 @@ public class MainActivity extends AppCompatActivity {
 //        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
 //        stackBuilder.addNextIntentWithParentStack(intent);
 //        // Get the PendingIntent containing the entire back stack
-//        PendingIntent pendingIntent =
-//                stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
-
+//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+//            pendingIntent =
+//                    stackBuilder.getPendingIntent(0, PendingIntent.FLAG_IMMUTABLE);
+//        } else {
+//            pendingIntent =
+//                    stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+//        }
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(android.R.drawable.ic_dialog_alert)
                 .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.clouds))
