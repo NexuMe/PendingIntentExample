@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PendingIntentExample</string>
+    <string name="start">Start</string>
+    <string name="cancel">Cancel</string>
 </resources>
